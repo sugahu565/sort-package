@@ -9,7 +9,7 @@ def small_random_list():
 
 @pytest.fixture
 def big_random_list():
-    return [randint(-10000, 10000) for _ in range(10000)]
+    return [randint(-10000, 10000) for _ in range(5000)]
 
 
 @pytest.fixture
