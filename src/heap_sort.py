@@ -25,7 +25,7 @@ def fall_elem(arr, len_arr, ind=0):
         r_child = l_child + 1
 
 
-def heap_sort(arr):
+def h_sort(arr):
     for i in range(1, len(arr)):
         rise_elem(arr, i)
 
