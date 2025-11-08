@@ -20,5 +20,5 @@ def __q_sort(arr, l, r):
 
 def q_sort(arr):
     new_arr = arr[:]
-    __q_sort(new_arr, 0, len_arr)
+    __q_sort(new_arr, 0, len(arr))
     return new_arr
