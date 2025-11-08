@@ -22,12 +22,16 @@ def merge(arr, start, end):
         arr[i] = sort_arr[i - start]
 
 
-def m_sort(arr, start = 0, end = -1):
-    if end == -1:
-        end = len(arr)
+def m_sort(arr, start, end):
     if end - start < 2:
         return
     mid = (start + end) // 2
     m_sort(arr, start, mid)
     m_sort(arr, mid, end)
     arr = merge(arr, start, end)
+
+
+def m_sort(arr):
+    new_arr = arr[:]
+    __m_sort(new_arr, 0, len(arr))
+    return new_arr
