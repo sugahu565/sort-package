@@ -1,4 +1,4 @@
-def b_sort(arr):
+def __b_sort(arr):
     was_swap = 1
     arr_lenght = len(arr)
     while was_swap:
@@ -7,3 +7,7 @@ def b_sort(arr):
             if arr[i - 1] > arr[i]:
                 arr[i - 1], arr[i] = arr[i], arr[i - 1]
                 was_swap = 1
+
+def b_sort(arr):
+    __b_sort(arr[:])
+    return arr
