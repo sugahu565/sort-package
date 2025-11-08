@@ -19,24 +19,24 @@ SORTING_FUNCTIONS = [
 ]
 
 @pytest.mark.parametrize("arr,expected,test_name", TEST_CASES)
-@pytest.mark.parametrize("function,func_name", SORTING_FUNTIONS)
+@pytest.mark.parametrize("function,func_name", SORTING_FUNCTIONS)
 def test_preliminary(arr, expected, test_name, function, func_name):
     assert function(arr) == expected
 
 
-@pytest.mark.parametrize("function, func_name")
-def test_small_random(function, func_name):
+@pytest.mark.parametrize("function, func_name", SORTING_FUNCTIONS)
+def test_small_random(function, func_name, small_random_list):
     arr = small_random_list
     assert function(arr) == sorted(arr)
 
 
-@pytest.mark.parametrize("function, func_name")
-def test_big_random(function, func_name):
+@pytest.mark.parametrize("function, func_name", SORTING_FUNCTIONS)
+def test_big_random(function, func_name, big_random_list):
     arr = big_random_list
     assert function(arr) == sorted(arr)
 
 
-@pytest.mark.parametrize("function, func_name")
-def test_random_size(function, func_name):
+@pytest.mark.parametrize("function, func_name", SORTING_FUNCTIONS)
+def test_random_size(function, func_name, random_size_list):
     arr = random_size_list
     assert function(arr) == sorted(arr)
