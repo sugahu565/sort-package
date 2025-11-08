@@ -22,7 +22,9 @@ def merge(arr, start, end):
         arr[i] = sort_arr[i - start]
 
 
-def m_sort(arr, start, end):
+def m_sort(arr, start = 0, end = -1):
+    if end == -1:
+        end = len(arr)
     if end - start < 2:
         return
     mid = (start + end) // 2
