@@ -9,5 +9,6 @@ def __b_sort(arr):
                 was_swap = 1
 
 def b_sort(arr):
-    __b_sort(arr[:])
-    return arr
+    new_arr = arr[:]
+    __b_sort(new_arr)
+    return new_arr

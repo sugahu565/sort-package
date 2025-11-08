@@ -1,4 +1,4 @@
-def merge(arr, start, end):
+def __merge(arr, start, end):
     sort_arr = [0] * (end - start + 1)
     mid = (start + end) // 2
     i, j, k = start, mid, 0
@@ -22,13 +22,13 @@ def merge(arr, start, end):
         arr[i] = sort_arr[i - start]
 
 
-def m_sort(arr, start, end):
+def __m_sort(arr, start, end):
     if end - start < 2:
         return
     mid = (start + end) // 2
-    m_sort(arr, start, mid)
-    m_sort(arr, mid, end)
-    arr = merge(arr, start, end)
+    __m_sort(arr, start, mid)
+    __m_sort(arr, mid, end)
+    arr = __merge(arr, start, end)
 
 
 def m_sort(arr):

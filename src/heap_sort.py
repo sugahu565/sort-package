@@ -27,13 +27,14 @@ def __fall_elem(arr, len_arr, ind=0):
 
 def __h_sort(arr):
     for i in range(1, len(arr)):
-        rise_elem(arr, i)
+        __rise_elem(arr, i)
 
     for i in range(len(arr) - 1, 0, -1):
         arr[0], arr[i] = arr[i], arr[0]
-        fall_elem(arr, i)
+        __fall_elem(arr, i)
 
 
 def h_sort(arr):
-    __h_sort(arr[:])
-    return arr
+    new_arr = arr[:]
+    __h_sort(new_arr)
+    return new_arr
