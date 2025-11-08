@@ -2,13 +2,15 @@ def __partition(arr, l, r):
     mid = arr[(l + r) // 2]
     i, j = l, r
     while i <= j:
-        while arr[i] < mid:
+        while i <= j and arr[i] < mid:
             i += 1
-        while arr[j] > mid:
+        while i <= j and arr[j] > mid:
             j -= 1
         if i >= j:
             break
         arr[i], arr[j] = arr[j], arr[i]
+        i += 1
+        j -= 1
     return j
 
 def __q_sort(arr, l, r):
@@ -20,5 +22,5 @@ def __q_sort(arr, l, r):
 
 def q_sort(arr):
     new_arr = arr[:]
-    __q_sort(new_arr, 0, len(arr))
+    __q_sort(new_arr, 0, len(arr) - 1)
     return new_arr
